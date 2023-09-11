@@ -1,9 +1,9 @@
 import { useState } from "react";
-import logo from "./assets/Logo.png";
+import logo from "./assets/logo.png";
 import john from "./assets/john.png";
-import rating from "./assets/Rating.png";
-import text from "./assets/heroText.png";
-import menu from "./assets/Menu.png";
+import rating from "./assets/rating.png";
+import text from "./assets/hero-text.png";
+import menu from "./assets/menu.png";
 import "./App.css";
 
 function App() {
