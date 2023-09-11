@@ -11,7 +11,7 @@ function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain">
+    <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain w-[100%]">
       <div className="flex justify-between items-center px-4 py-2 lg_pro:pt-6 bg-opacity-50">
         {/* Logo */}
         <img
@@ -34,7 +34,7 @@ function App() {
       <div className="mx-5 lg_pro:mx-20 mt-2 lg_pro:mt-10 lg_pro:space-y-4 space-y-1">
         <img
           src={john}
-          className="object-cover max-w-[31%] mt-3 lg_pro:mt-20"
+          className="object-cover max-w-[31%] mt-1 lg_pro:mt-20"
           alt=""
         />
         <img
