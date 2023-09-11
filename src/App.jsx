@@ -1,16 +1,17 @@
 import { useState } from "react";
 import logo1 from "./assets/logo1.png";
-import john from "./assets/john.png";
-import rating from "./assets/rating.png";
-import hroText from "./assets/herotext.png";
-import menu from "./assets/menu.png";
+import john from "./assets/john1.png";
+import rating from "./assets/rating1.png";
+import heroText from "./assets/herotext.png";
+import menu from "./assets/menu1.png";
+import button from "./assets/button1.png";
 import "./App.css";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div className="bg-[url(/src/assets/poster.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain">
+    <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain">
       <div className="flex justify-between items-center px-4 py-2 lg_pro:m-6 bg-opacity-50">
         {/* Logo */}
         <img
@@ -42,10 +43,16 @@ function App() {
           alt=""
         />
         <img
-          src={hroText}
+          src={heroText}
           className="object-cover max-w-[35%] -mt-2  lg_pro:mt-2"
           alt=""
         />
+        <img
+          src={button}
+          className="object-cover max-w-[20%] -mt-6  lg_pro:mt-2"
+          alt=""
+        />
+      
       </div>
     </div>
   );
