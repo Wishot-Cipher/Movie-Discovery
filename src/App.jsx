@@ -44,7 +44,7 @@ function App() {
         />
         <img
           src={heroText}
-          className="object-cover max-w-[40%] -mt-3  lg_pro:mt-2"
+          className="object-cover max-w-[40vw] lg_pro:w-[30vw] -mt-3  lg_pro:mt-2"
           alt=""
         />
         <img
