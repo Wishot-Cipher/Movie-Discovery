@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "./assets/logo1.png";
+import logo1 from "./assets/logo1.png";
 import john from "./assets/john.png";
 import rating from "./assets/rating.png";
 import text from "./assets/hero-text.png";
@@ -14,7 +14,7 @@ function App() {
       <div className="flex justify-between items-center px-4 py-2 lg_pro:m-6 bg-opacity-50">
         {/* Logo */}
         <img
-          src={logo}
+          src={logo1}
           className="object-cover max-w-[30%] h-auto"
           alt=""
         />
