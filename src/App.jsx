@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain">
-      <div className="flex justify-between items-center px-4 py-2 lg_pro:p-6 bg-opacity-50">
+      <div className="flex justify-between items-center px-4 py-2 lg_pro:pt-6 bg-opacity-50">
         {/* Logo */}
         <img
           src={logo1}
