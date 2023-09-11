@@ -31,25 +31,25 @@ function App() {
         <img src={menu} className="object-cover max-w-[8%] md:max-w-[8%]  cursor-pointer" alt="" />
       </div>
 
-      <div className="mx-5 lg_pro:mx-20 mt-2 lg_pro:mt-10 lg_pro:space-y-4 space-y-1">
+      <div className="mx-5 lg_pro:mx-20 mt-2 lg_pro:mt-10 lg_pro:space-y-4 space-y-2">
         <img
           src={john}
-          className="object-cover max-w-[31%] mt-1 lg_pro:mt-20"
+          className="object-cover max-w-[31%] mt-2 lg_pro:mt-20"
           alt=""
         />
         <img
           src={rating}
-          className="object-cover max-w-[31%] -mt-2  lg_pro:mt-2"
+          className="object-cover max-w-[31%] -mt-4  lg_pro:mt-2"
           alt=""
         />
         <img
           src={heroText}
-          className="object-cover max-w-[40%] -mt-2  lg_pro:mt-2"
+          className="object-cover max-w-[40%] -mt-3  lg_pro:mt-2"
           alt=""
         />
         <img
           src={button}
-          className="object-cover max-w-[20%] -mt-6  lg_pro:mt-2"
+          className="object-cover max-w-[20%] -mt-7  lg_pro:mt-2"
           alt=""
         />
       
