@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo1.png";
 import john from "./assets/john.png";
 import rating from "./assets/rating.png";
 import text from "./assets/hero-text.png";
@@ -7,7 +7,7 @@ import menu from "./assets/menu.png";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <div className="bg-[url(/src/assets/poster.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain">
