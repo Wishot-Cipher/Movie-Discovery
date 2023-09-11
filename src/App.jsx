@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo1 from "./assets/logo1.png";
 import john from "./assets/john.png";
 import rating from "./assets/rating.png";
-import text from "./assets/hero-text.png";
+import hroText from "./assets/herotext.png";
 import menu from "./assets/menu.png";
 import "./App.css";
 
@@ -42,7 +42,7 @@ function App() {
           alt=""
         />
         <img
-          src={text}
+          src={hroText}
           className="object-cover max-w-[35%] -mt-2  lg_pro:mt-2"
           alt=""
         />
