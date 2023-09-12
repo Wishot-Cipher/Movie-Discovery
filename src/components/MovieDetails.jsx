@@ -25,7 +25,7 @@ const MovieDetails = ({
       <div className="lg:col-span-1 bg-gray-200 p-2 h-auto lg:h-screen shadow-lg">
         <img
           src={logo1}
-          className="object-cover max-w-[55%] h-auto lg:mb-24 mb-4"
+          className="object-cover lg_pro:max-w-[63%] max-w-[44%] h-auto lg:mb-24 mb-4"
           alt=""
         />
         <ul className="text-left space-y-8 flex-col mb-8">

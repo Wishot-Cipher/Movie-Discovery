@@ -37,7 +37,10 @@ const MovieDetailsPage = () => {
           voteAverage={movieDetails.vote_average}
         />
       ) : (
-        <div> <Spinner /> </div>
+        <div className="loader-container">
+        <div className="loader"> <Spinner /> </div>
+      </div>
+      
       )}
     </div>
   );

@@ -13,6 +13,12 @@
     animation: spin 1s linear infinite;
     margin: 20px auto;
   }
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This ensures the container takes the full height of the viewport */
+  }
 
    .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);

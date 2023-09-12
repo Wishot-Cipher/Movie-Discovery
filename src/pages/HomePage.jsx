@@ -66,14 +66,24 @@ const HomePage = () => {
     >
       <div className="bg-poster lg_pro:h-[90vh] h-[30vh] bg-no-repeat bg-cover bg-center mb-16">
         <div className="flex justify-between items-center mx-1 lg_pro:mx-4 py-2 lg_pro:pt-6 bg-opacity-50">
-          {/* Logo */}
-          <img src={logo1} className="object-cover max-w-[30%] h-auto hidden lg_pro:block" alt="" />
-          <img src={tv1} className="object-cover max-w-[10%] h-auto lg_pro:hidden" alt="" />
+          <div className="">
+            <Link to="/">
+              <img
+                src={logo1}
+                className="object-cover max-w-none w-[85%] h-auto hidden lg_pro:block "
+                alt=""
+              />
+            </Link>
 
-          {/* Search Input */}
+            <Link to="/">
+              <img
+                src={tv1}
+                className="object-cover max-w-none w-[68%] h-auto lg_pro:hidden"
+                alt=""
+              />
+            </Link>
+          </div>
           <SearchBar onSearch={handleSearch} />
-          {/* Menu */}
-          {/* <div> */}
           <div className="flex items-center lg_pro:mr-8">
             <h1 className="text-white w-[5vw] mr-1 hidden lg_pro:block text-lg font-bold ">
               sign up
@@ -84,13 +94,12 @@ const HomePage = () => {
               alt=""
             />
           </div>
-          {/* </div> */}
         </div>
 
         <div className="mx-5 lg_pro:mx-20 mt-7 lg_pro:mt-10 lg_pro:space-y-4 space-y-1.5">
           <img
             src={john}
-            className="object-cover max-w-[45%] mt-2 lg_pro:mt-20"
+            className="object-cover max-w-[40%] mt-2 lg_pro:mt-20"
             alt=""
           />
           <img
@@ -100,12 +109,12 @@ const HomePage = () => {
           />
           <img
             src={heroText}
-            className="object-cover max-w-[40vw] lg_pro:w-[28vw] -mt-3  lg_pro:mt-2"
+            className="object-cover max-w-[60vw] lg_pro:w-[28vw] -mt-3  lg_pro:mt-2"
             alt=""
           />
           <img
             src={button}
-            className="object-cover max-w-[20%] -mt-20  lg_pro:mt-2"
+            className="object-cover max-w-[25%] -mt-20  lg_pro:mt-2 cursor-pointer"
             alt=""
           />
         </div>
