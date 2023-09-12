@@ -1,19 +1,74 @@
-import React from 'react';
+import React from "react";
+import logo1 from "../assets/logo2.png";
+import { Link } from "react-router-dom";
 
-const MovieDetails = ({ title, releaseDate, runtime, overview, posterPath }) => {
+const MovieDetails = ({
+  title,
+  releaseDate,
+  runtime,
+  overview,
+  posterPath,
+  voteAverage,
+}) => {
   return (
-    <div className="bg-white p-4 shadow rounded-lg flex flex-col items-center w-[70%]">
-      <div className="mb-4">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 p-2">
+      {/* Sidebar */}
+      <div className="lg:col-span-1 bg-gray-200 p-2 h-auto lg:h-screen shadow-lg">
         <img
-          src={`https://image.tmdb.org/t/p/w500/${posterPath}`}
-          alt={`${title} Poster`}
-          className="w-full h-[40vh] max-w-[60vw] object-cover"
+          src={logo1}
+          className="object-cover max-w-[55%] h-auto lg:pro:mb-24 mb-4"
+          alt=""
         />
+        <ul className="text-center space-y-8 flex-col justify-center">
+          <li className=" font-bold">
+            <Link to="/" className=" text-pink-700">
+              Home
+            </Link>
+          </li>
+          <li className=" hidden lg_pro:block">
+            <Link to="/movies">Movies</Link>
+          </li>
+          <li className=" hidden lg_pro:block">
+            <Link to="/series">Series</Link>
+          </li>
+          <li className=" hidden lg_pro:block">
+            <Link to="/upcoming">Upcoming</Link>
+          </li>
+          <li className=" hidden lg_pro:block">
+            <Link to="/logout">Logout</Link>
+          </li>
+        </ul>
       </div>
-      <h2 className="text-2xl font-bold mb-1 text-center">{title}</h2>
-      <p className="text-sm text-gray-600 mb-2">Release Date: {releaseDate}</p>
-      <p className="text-sm text-gray-600 mb-2">Runtime: {runtime} minutes</p>
-      <p className="text-center">{overview}</p>
+
+      {/* Main Content */}
+      <div
+        className="lg:col-span-4 bg-white p-3 shadow rounded-lg"
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        }}
+      >
+        <div className="mb-4 h-[auto] w-full flex justify-center">
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${posterPath}`}
+            alt={`${title} Poster`}
+            className="object-cover object-center max-w-full max-h-[400px] h-fit lg_pro:w-fit w-full rounded-md"
+          />
+        </div>
+
+        <h2 className="text-2xl font-bold mb-4 text-center">{title}</h2>
+        <div className="flex justify-between text-center lg_pro:mx-4">
+          <p className="text-sm text-gray-600 mb-2 font-bold">
+            Runtime: {runtime} minutes
+          </p>
+          <p className="text-sm text-gray-600 mb-2 font-bold">
+            {releaseDate}
+          </p>
+        </div>
+          <p className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
+            Rating: {voteAverage}
+          </p>
+        <p className="text-justify font-bold lg_pro:mx-4">{overview}</p>
+      </div>
     </div>
   );
 };

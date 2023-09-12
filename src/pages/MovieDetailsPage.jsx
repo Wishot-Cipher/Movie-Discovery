@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from '../utils/axios';
 import MovieDetails from '../components/MovieDetails';
+import Spinner from '../components/Spinner';
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const MovieDetailsPage = () => {
   }, [id]);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="  p-0">
       {movieDetails ? (
         <MovieDetails
           title={movieDetails.title}
@@ -33,9 +34,10 @@ const MovieDetailsPage = () => {
           runtime={movieDetails.runtime}
           overview={movieDetails.overview}
           posterPath={movieDetails.poster_path}
+          voteAverage={movieDetails.vote_average}
         />
       ) : (
-        <div>Loading...</div>
+        <div> <Spinner /> </div>
       )}
     </div>
   );

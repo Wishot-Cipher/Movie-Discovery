@@ -63,8 +63,8 @@ const HomePage = () => {
       transition={{ duration: 0.5 }} // Transition duration
       className=" p-0"
     >
-      <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] bg-no-repeat h-[50vh] object-cover bg-contain w-[100%]">
-        <div className="flex justify-between items-center mx-4 py-2 lg_pro:pt-6 bg-opacity-50">
+      <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] h-[30vh] bg-no-repeat object-cover bg-contain w-[100%]">
+        <div className="flex justify-between items-center mx-1 lg_pro:mx-4 py-2 lg_pro:pt-6 bg-opacity-50">
           {/* Logo */}
           <img src={logo1} className="object-cover max-w-[30%] h-auto" alt="" />
 
@@ -73,7 +73,7 @@ const HomePage = () => {
           {/* Menu */}
           {/* <div> */}
           <div className="flex items-center lg_pro:mr-8">
-            <h1 className="text-white w-[5vw] mr-1 hidden lg_pro:block text-lg font-bold">
+            <h1 className="text-white w-[5vw] mr-1 hidden lg_pro:block text-lg font-bold ">
               sign up
             </h1>
             <img
@@ -108,9 +108,9 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Movie Discovery</h1>
-        <h2 className="text-2xl font-bold mb-2">Top 10 Movies</h2>
+      <div className="container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg">
+        <h1 className="text-2xl lg_pro:text-3xl font-extrabold mb-4 ">Movie Discovery</h1>
+        <h2 className="text-1xl lg_pro:text-2xl font-extrabold mb-3 text-[#BE123C] border-b-1">Top 10 Movies</h2>
       </div>
       {loading ? <Spinner /> : <MovieList movies={movies} />}
     </motion.div>
