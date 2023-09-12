@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo1 from "../assets/logo1.png";
+import tv1 from "../assets/tv1.png";
 import john from "../assets/john1.png";
 import rating from "../assets/rating1.png";
 import heroText from "../assets/herotext.png";
@@ -20,7 +21,7 @@ const HomePage = () => {
   // Function to fetch top movies
   const fetchTopMovies = async () => {
     try {
-      const response = await axios.get("/discover/movie", {
+      const response = await axios.get("/movie/top_rated", {
         params: {
           sort_by: "popularity.desc",
           api_key: "14e6772572173a61fc985a3f2094ea07",
@@ -66,7 +67,8 @@ const HomePage = () => {
       <div className="bg-poster lg_pro:h-[90vh] h-[30vh] bg-no-repeat bg-cover bg-center mb-16">
         <div className="flex justify-between items-center mx-1 lg_pro:mx-4 py-2 lg_pro:pt-6 bg-opacity-50">
           {/* Logo */}
-          <img src={logo1} className="object-cover max-w-[30%] h-auto" alt="" />
+          <img src={logo1} className="object-cover max-w-[30%] h-auto hidden lg_pro:block" alt="" />
+          <img src={tv1} className="object-cover max-w-[10%] h-auto lg_pro:hidden" alt="" />
 
           {/* Search Input */}
           <SearchBar onSearch={handleSearch} />
@@ -85,10 +87,10 @@ const HomePage = () => {
           {/* </div> */}
         </div>
 
-        <div className="mx-5 lg_pro:mx-20 mt-2 lg_pro:mt-10 lg_pro:space-y-4 space-y-1.5">
+        <div className="mx-5 lg_pro:mx-20 mt-7 lg_pro:mt-10 lg_pro:space-y-4 space-y-1.5">
           <img
             src={john}
-            className="object-cover max-w-[31%] mt-2 lg_pro:mt-20"
+            className="object-cover max-w-[45%] mt-2 lg_pro:mt-20"
             alt=""
           />
           <img
