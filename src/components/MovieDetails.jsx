@@ -19,10 +19,13 @@ const MovieDetails = ({
           className="object-cover max-w-[55%] h-auto lg:pro:mb-24 mb-4"
           alt=""
         />
-        <ul className="text-center space-y-8 flex-col justify-center">
-          <li className=" font-bold">
-            <Link to="/" className=" text-pink-700">
-              Home
+        <ul className="text-left space-y-8 flex-col mb-8">
+          <li className=" text-center font-bold">
+            <Link
+              to="/"
+              className=" text-white text-md bg-gray-700 px-4 py-2 my-4 rounded-lg shadow-xl"
+            >
+              Back To Home
             </Link>
           </li>
           <li className=" hidden lg_pro:block">
@@ -60,13 +63,11 @@ const MovieDetails = ({
           <p className="text-sm text-gray-600 mb-2 font-bold">
             Runtime: {runtime} minutes
           </p>
-          <p className="text-sm text-gray-600 mb-2 font-bold">
-            {releaseDate}
-          </p>
+          <p className="text-sm text-gray-600 mb-2 font-bold">{releaseDate}</p>
         </div>
-          <p className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
-            Rating: {voteAverage}
-          </p>
+        <p className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
+          Rating: {voteAverage}
+        </p>
         <p className="text-justify font-bold lg_pro:mx-4">{overview}</p>
       </div>
     </div>

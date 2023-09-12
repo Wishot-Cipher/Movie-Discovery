@@ -11,6 +11,7 @@ import SearchBar from "../components/SearchBar";
 import axios from "../utils/axios";
 import { motion } from "framer-motion";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -40,20 +41,19 @@ const HomePage = () => {
   // Function to handle search
   const handleSearch = async (query) => {
     try {
-      const response = await axios.get('/search/movie', {
+      const response = await axios.get("/search/movie", {
         params: {
           query,
-          api_key: '14e6772572173a61fc985a3f2094ea07',
+          api_key: "14e6772572173a61fc985a3f2094ea07",
         },
       });
       setMovies(response.data.results);
       setLoading(false);
     } catch (error) {
-      console.error('Error fetching movies:', error);
+      console.error("Error fetching movies:", error);
       setLoading(false);
     }
   };
-  
 
   return (
     <motion.div
@@ -63,13 +63,13 @@ const HomePage = () => {
       transition={{ duration: 0.5 }} // Transition duration
       className=" p-0"
     >
-      <div className="bg-[url(/src/assets/poster1.png)] lg_pro:h-[100vh] h-[30vh] bg-no-repeat object-cover bg-contain w-[100%]">
+      <div className="bg-poster lg_pro:h-[90vh] h-[30vh] bg-no-repeat bg-cover bg-center mb-16">
         <div className="flex justify-between items-center mx-1 lg_pro:mx-4 py-2 lg_pro:pt-6 bg-opacity-50">
           {/* Logo */}
           <img src={logo1} className="object-cover max-w-[30%] h-auto" alt="" />
 
           {/* Search Input */}
-          <SearchBar onSearch = {handleSearch} />
+          <SearchBar onSearch={handleSearch} />
           {/* Menu */}
           {/* <div> */}
           <div className="flex items-center lg_pro:mr-8">
@@ -108,10 +108,23 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <div className="container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg">
-        <h1 className="text-2xl lg_pro:text-3xl font-extrabold mb-4 ">Movie Discovery</h1>
-        <h2 className="text-1xl lg_pro:text-2xl font-extrabold mb-3 text-[#BE123C] border-b-1">Top 10 Movies</h2>
+      <div className="lg_pro:container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg">
+        <div className="flex justify-between items-center mb-4 mx-4">
+          <h1 className="text-2xl lg_pro:text-3xl font-extrabold">
+            Movie Discovery
+          </h1>
+          <Link
+            to="/favorites"
+            className="bg-pink-700 text-white py-2 px-4 rounded-lg text-sm lg_pro:text-md hover:bg-pink-600"
+          >
+            Favorites
+          </Link>
+        </div>
+        <h2 className="text-1xl lg_pro:text-2xl font-extrabold mb-4 text-[#BE123C] border-b-1">
+          Top 10 Movies
+        </h2>
       </div>
+
       {loading ? <Spinner /> : <MovieList movies={movies} />}
     </motion.div>
   );
