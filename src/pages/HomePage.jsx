@@ -96,7 +96,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="mx-5 lg_pro:mx-20 mt-7 lg_pro:mt-10 lg_pro:space-y-4 space-y-2">
+        <div className="mx-5 lg_pro:mx-20 mt-7 lg_pro:mt-10 lg_pro:space-y-5 space-y-2">
           <img
             src={john}
             className="object-cover max-w-[45%] mt-2 lg_pro:mt-20"
@@ -109,7 +109,7 @@ const HomePage = () => {
           />
           <img
             src={heroText}
-            className="object-cover max-w-[75vw] lg_pro:w-[28vw] -mt-3  lg_pro:mt-2"
+            className="object-cover max-w-[75vw] lg_pro:w-[30vw] -mt-2  lg_pro:mt-2"
             alt=""
           />
           <img
