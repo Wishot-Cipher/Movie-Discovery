@@ -3,6 +3,19 @@ import play from "../assets/play.png";
 import logo1 from "../assets/logo2.png";
 import { Link } from "react-router-dom";
 
+const formatDateToUTC = (releaseDate) => {
+  const localDate = new Date(releaseDate);
+  const utcDate = new Date(
+    localDate.getUTCFullYear(),
+    localDate.getUTCMonth(),
+    localDate.getUTCDate(),
+    localDate.getUTCHours(),
+    localDate.getUTCMinutes(),
+    localDate.getUTCSeconds()
+  );
+  return utcDate.toISOString().split("T")[0];
+};
+
 const MovieDetails = ({
   title,
   releaseDate,
@@ -28,6 +41,8 @@ const MovieDetails = ({
       maxHeight: "50vh",
     };
   }
+
+  const utcReleaseDate = formatDateToUTC(releaseDate);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 p-2">
@@ -74,8 +89,6 @@ const MovieDetails = ({
           className="relative rounded-lg"
           style={backgroundStyle}
         >
-          {" "}
-          {/* Added relative positioning */}
           <Link to={"/"}>
             <div className="flex items-center justify-center h-full text-center text-white">
               <img
@@ -96,13 +109,17 @@ const MovieDetails = ({
 
         <div className="flex justify-between text-center lg_pro:mx-4">
           <p data-testid="movie-runtime" className="text-sm text-gray-600 mb-2 font-bold">
-          🕒Runtime: {runtime} minutes
+            🕒Runtime: {runtime} minutes
           </p>
-          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold"><span className="text-gray-800 mb-2 font-extrabold">📅Date:</span> {releaseDate}</p>
+          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold">
+            <span className="text-gray-800 mb-2 font-extrabold">📅Date:</span> {utcReleaseDate}
+          </p>
         </div>
-        <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">⭐Rating: {voteAverage}</p>
+        <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
+          ⭐Rating: {voteAverage}
+        </p>
         <p data-testid="movie-overview" className="text-justify font-bold lg_pro:mx-4">
-       <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span> {overview}
+          <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span> {overview}
         </p>
       </div>
     </div>
