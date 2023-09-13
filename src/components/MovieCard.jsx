@@ -34,9 +34,9 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
         </div>
       </div>
       <button
-        className={`absolute top-6 text-md right-8 text-red-500 ${
+        className={`absolute top-6 text-2xl right-8 text-red-500 ${
           favorites.includes(id) ? "opacity-100" : "opacity-50"
-        } bg-white rounded-full p-[1px]`}
+        } bg-white rounded-full p-[2px]`}
         onClick={() => handleFavoriteToggle(id)}
       >
         ❤️
