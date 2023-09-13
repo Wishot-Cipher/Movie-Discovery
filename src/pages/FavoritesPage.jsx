@@ -59,10 +59,10 @@ const FavoritesPage = () => {
               <h2 className="text-xl font-bold mt-auto mb-2">{movie.title}</h2>
             </Link>
             <div className="flex justify-between items-center">
-              <span className="text-gray-500 font-semibold">
+              <span className="text-gray-600 font-semibold">
                 Rating: {movie.vote_average}
               </span>
-              <span className="text-gray-500 font-semibold">
+              <span className="text-gray-600 font-semibold">
                 Release Date: {new Date(movie.release_date).getFullYear()}
               </span>
             </div>

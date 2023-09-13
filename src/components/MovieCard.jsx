@@ -22,11 +22,11 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
           </h2>
         </Link>
         <div className="flex justify-between items-center">
-          <span className="text-gray-500 font-semibold" data-testid="movie-vote-average">
+          <span className="text-gray-600 font-semibold" data-testid="movie-vote-average">
             Rating: {voteAverage}
           </span>
-          <span className="text-gray-500 font-semibold" data-testid="movie-release-date">
-            Release Date: {new Date(releaseDate).toUTCString()}
+          <span className="text-gray-600 font-semibold" data-testid="movie-release-date">
+            Release Date: {releaseDate}
           </span>
         </div>
       </div>
