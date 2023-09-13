@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, voteAverage, favorites }) => {
   // Convert releaseDate to UTC format
-  const releaseDateTime = new Date(releaseDate);
-  const formattedReleaseDate = `${releaseDateTime.getMonth() + 1}/${releaseDateTime.getDate()}/${releaseDateTime.getFullYear()}, ${releaseDateTime.getHours()}:${releaseDateTime.getMinutes()}`;
+  const formattedReleaseDate = new Date(releaseDate).toDateString();
 
   return (
     <div className="text-black relative" data-testid="movie-card">
