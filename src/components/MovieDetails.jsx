@@ -11,7 +11,7 @@ const MovieDetails = ({
   backdropPath,
   voteAverage,
 }) => {
-  const backgroundStyle = {
+  let backgroundStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://image.tmdb.org/t/p/original${backdropPath}')`,
     backgroundSize: "cover",
     backgroundPosition: "center top",
