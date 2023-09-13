@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, voteAverage, favorites }) => {
+  // Convert releaseDate to UTC format
+  const formattedReleaseDate = new Date(releaseDate).toUTCString();
+
   return (
     <div className="text-black relative" data-testid="movie-card">
       <div
@@ -22,16 +25,16 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
           </h2>
         </Link>
         <div className="flex justify-between items-center">
-          <span className="text-gray-600 font-semibold" data-testid="movie-vote-average">
-          ⭐Rating: {voteAverage}
+          <span className="text-gray-600 font-md" data-testid="movie-vote-average">
+            ⭐Rating: {voteAverage}
           </span>
-          <span className="text-gray-600 font-semibold" data-testid="movie-release-date">
-          <span className="text-gray-600 mb-2 font-semibold">📅Date:</span> {releaseDate}
+          <span className="text-gray-600 font-md" data-testid="movie-release-date">
+            <span className="text-gray-600 mb-2 font-semibold">📅:</span> {formattedReleaseDate}
           </span>
         </div>
       </div>
       <button
-        className={`absolute top-6 text-2xl right-8 text-red-500 ${
+        className={`absolute top-6 text-md right-8 text-red-500 ${
           favorites.includes(id) ? "opacity-100" : "opacity-50"
         } bg-white rounded-full p-[1px]`}
         onClick={() => handleFavoriteToggle(id)}
