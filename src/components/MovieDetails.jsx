@@ -112,7 +112,7 @@ const MovieDetails = ({
             🕒Runtime: {runtime} minutes
           </p>
           <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold">
-            <span className="text-gray-800 mb-2 font-extrabold">📅Date:</span> {utcReleaseDate}
+            <span className="text-gray-800 mb-2 font-extrabold">📅:</span> {utcReleaseDate}
           </p>
         </div>
         <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
