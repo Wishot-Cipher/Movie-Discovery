@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, voteAverage, favorites }) => {
-  // Convert releaseDate to UTC format
-  const formattedReleaseDate = new Date(releaseDate).toDateString();
+  // Convert releaseDate to a short and readable UTC format
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  const formattedReleaseDate = new Date(releaseDate).toLocaleDateString('en-US', options);
 
   return (
     <div className="text-black relative" data-testid="movie-card">
