@@ -1,32 +1,42 @@
-// MovieCard.js
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import React, { useState } from 'react';
-
-const MovieCard = ({ title, releaseDate, posterUrl }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  const handleToggleFavorite = () => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const movie = { title, releaseDate, posterUrl };
-
-    const updatedFavorites = isFavorite
-      ? favorites.filter((m) => m.title !== title)
-      : [...favorites, movie];
-
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-    setIsFavorite(!isFavorite);
-  };
-
+const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, voteAverage, favorites }) => {
   return (
-    <div className="bg-white p-4 rounded shadow h-full flex flex-col justify-between">
-      <img
-        src={posterUrl}
-        alt={`${title} Poster`}
-        className="w-full object-cover h-[90%] mb-4 object-center"
-      />
-      <h2 className="text-xl font-bold mt-auto mb-2">{title}</h2>
-      <button onClick={handleToggleFavorite} className="bg-blue-500 text-white px-4 py-2 rounded">
-        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+    <div className="text-black relative" data-testid="movie-card">
+      <div
+        className="bg-white p-4 shadow h-full flex flex-col justify-between rounded-lg"
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        }}
+      >
+        <Link to={`/movies/${id}`}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${posterUrl}`}
+            alt={`${title} Poster`}
+            className="w-full object-cover h-[90%] mb-1 object-center rounded-lg"
+            data-testid="movie-poster"
+          />
+          <h2 className="text-xl font-bold mt-auto mb-4" data-testid="movie-title">
+            {title}
+          </h2>
+        </Link>
+        <div className="flex justify-between items-center">
+          <span className="text-gray-500 font-semibold" data-testid="movie-vote-average">
+            Rating: {voteAverage}
+          </span>
+          <span className="text-gray-500 font-semibold" data-testid="movie-release-date">
+            Release Date: {new Date(releaseDate).toUTCString()}
+          </span>
+        </div>
+      </div>
+      <button
+        className={`absolute top-6 text-2xl right-8 text-red-500 ${
+          favorites.includes(id) ? "opacity-100" : "opacity-50"
+        } bg-white rounded-full p-[1px]`}
+        onClick={() => handleFavoriteToggle(id)}
+      >
+        ❤️
       </button>
     </div>
   );

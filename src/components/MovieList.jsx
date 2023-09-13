@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard";
 
 const MovieList = ({ movies }) => {
   const [favorites, setFavorites] = useState(() => {
@@ -24,39 +25,17 @@ const MovieList = ({ movies }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-2">
       {movies.map((movie) => (
-        <div key={movie.id} className="text-black relative">
-          <div
-            className="bg-white p-4 shadow h-full flex flex-col justify-between rounded-lg"
-            style={{
-              boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-            }}
-          >
-            <Link to={`/movies/${movie.id}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt={`${movie.title} Poster`}
-                className="w-full object-cover h-[90%] mb-1 object-center rounded-lg"
-              />
-              <h2 className="text-xl font-bold mt-auto mb-4">{movie.title}</h2>
-            </Link>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-500 font-semibold">
-                Rating: {movie.vote_average}
-              </span>
-              <span className="text-gray-500 font-semibold">
-                Release Date: {new Date(movie.release_date).getFullYear()}
-              </span>
-            </div>
-          </div>
-          <button
-            className={`absolute top-6 text-2xl right-8 text-red-500 ${
-              favorites.includes(movie.id) ? "opacity-100" : "opacity-50"
-            } bg-white rounded-full p-[1px]`}
-            onClick={() => handleFavoriteToggle(movie.id)}
-          >
-            ❤️
-          </button>
-        </div>
+         <div key={movie.id}>
+         <MovieCard
+         title={movie.title}
+         releaseDate={movie.release_date}
+         posterUrl={movie.poster_path}
+         handleFavoriteToggle={handleFavoriteToggle}
+         id={movie.id}
+         voteAverage={movie.vote_average}
+         favorites={favorites}
+         />
+         </div>
       ))}
     </div>
   );

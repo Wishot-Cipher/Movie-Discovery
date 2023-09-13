@@ -32,7 +32,7 @@ const MovieDetails = ({
           <li className="text-center font-bold">
             <Link
               to="/"
-              className="text-white text-md bg-gray-700 px-4 py-2 my-4 rounded-lg shadow-xl block"
+              className="text-white text-md bg-gray-700 px-4 py-2 my-4 lg_pro:mb-8 rounded-lg shadow-xl block"
             >
               Back To Home
             </Link>
@@ -59,7 +59,11 @@ const MovieDetails = ({
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         }}
       >
-        <div style={backgroundStyle} className="relative">
+        <div
+          data-testid="movie-poster"
+          className="relative"
+          style={backgroundStyle}
+        >
           {" "}
           {/* Added relative positioning */}
           <Link to={"/"}>
@@ -76,20 +80,19 @@ const MovieDetails = ({
           </Link>
         </div>
 
-        <h2 className="text-3xl font-extrabold my-3 mb-6 text-center text-[#BE123C] text-shadow">
+        <h2 data-testid="movie-title" className="text-3xl font-extrabold my-3 mb-6 text-center text-[#BE123C] text-shadow">
           {title}
         </h2>
 
         <div className="flex justify-between text-center lg_pro:mx-4">
-          <p className="text-sm text-gray-600 mb-2 font-bold">
+          <p data-testid="movie-runtime" className="text-sm text-gray-600 mb-2 font-bold">
             Runtime: {runtime} minutes
           </p>
-          <p className="text-sm text-gray-600 mb-2 font-bold">{releaseDate}</p>
+          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold">{releaseDate}</p>
         </div>
-        <p className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
-          Rating: {voteAverage}
+        <p data-testid="movie-overview" className="text-justify font-bold lg_pro:mx-4">
+          {overview}
         </p>
-        <p className="text-justify font-bold lg_pro:mx-4">{overview}</p>
       </div>
     </div>
   );
