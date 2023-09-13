@@ -8,7 +8,7 @@ export default {
     extend: {
       screens: {
         smallest: "320px",
-        lg_pro: "938px"
+        lg_pro: "800px"
       }
     },
   },

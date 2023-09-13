@@ -64,9 +64,9 @@ const HomePage = () => {
       transition={{ duration: 0.5 }} // Transition duration
       className=" p-0"
     >
-      <div className="bg-poster lg_pro:h-[90vh] h-[40vh] bg-no-repeat bg-cover bg-center mb-16">
+      <div className="bg-poster lg:h-[90vh] bg-no-repeat bg-cover bg-center mb-16" >
         <div className="flex justify-between items-center mx-1 lg_pro:mx-4 py-2 lg_pro:pt-6 bg-opacity-50">
-          <div className="">
+          <div >
             <Link to="/">
               <img
                 src={logo1}
@@ -96,25 +96,25 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="mx-5 lg_pro:mx-20 mt-7 lg_pro:mt-10 lg_pro:space-y-5 space-y-2">
+        <div className="mx-5 lg_pro:mx-20 mt-16 lg_pro:mt-10 lg_pro:space-y-5 space-y-2">
           <img
             src={john}
-            className="object-cover max-w-[45%] mt-2 lg_pro:mt-20"
+            className="object-cover max-w-[50%] mt-2 lg_pro:mt-20"
             alt=""
           />
           <img
             src={rating}
-            className="object-cover max-w-[40%] -mt-5  lg_pro:mt-2"
+            className="object-cover max-w-[50%] -mt-5  lg_pro:mt-2"
             alt=""
           />
           <img
             src={heroText}
-            className="object-cover max-w-[75vw] lg_pro:w-[30vw] -mt-2  lg_pro:mt-2"
+            className="object-cover max-w-[80vw] lg_pro:w-[30vw] -mt-2  lg_pro:mt-2"
             alt=""
           />
           <img
             src={button}
-            className="object-cover max-w-[35%] -mt-20  lg_pro:mt-2"
+            className="object-cover max-w-[40%] -mt-20  lg_pro:mt-2 "
             alt=""
           />
         </div>

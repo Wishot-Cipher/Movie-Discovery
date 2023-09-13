@@ -36,9 +36,10 @@
   @media (max-width: 768px) {
     .bg-poster {
       background-size: cover;
-      height: 50vh; /* Adjust the height as needed */
+      height: 400px; /* Adjusted the height as for mobile */
+      /* height: 50vh; */
     }
   }
-  
-  
+
+
 }
