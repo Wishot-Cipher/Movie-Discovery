@@ -32,11 +32,19 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
         </Link>
         <ToastContainer />
         <div className="flex justify-between items-center">
+<<<<<<< HEAD
           <span className="text-gray-600 font-bold text-base" data-testid="movie-vote-average">
             ⭐Rating: {voteAverage}
           </span>
           <span className="text-gray-600 font-bold" data-testid="movie-release-date">
             <span className="text-gray-600 mb-2 font-bold text-base">📅:</span> {utcReleaseDate}
+=======
+          <span className="text-gray-600 font-md" data-testid="movie-vote-average">
+            ⭐Rating: {voteAverage}
+          </span>
+          <span className="text-gray-600 font-md" data-testid="movie-release-date">
+            <span className="text-gray-600 mb-2 font-semibold">📅:</span> {utcReleaseDate}
+>>>>>>> f31651b37be9e26d4b191ca9513e5ccf70eb1012
           </span>
         </div>
       </div>

@@ -24,6 +24,11 @@ const notify = () => {
     theme: "light",
     });;}
 
+const formatDateToUTC = (releaseDate) => {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(releaseDate).toLocaleDateString('en-US', options);
+};
+
 const MovieDetails = ({
   title,
   releaseDate,
@@ -97,7 +102,11 @@ const MovieDetails = ({
           className="relative rounded-lg"
           style={backgroundStyle}
         >
+<<<<<<< HEAD
           <Link onClick={notify}>
+=======
+          <Link to={"/"}>
+>>>>>>> f31651b37be9e26d4b191ca9513e5ccf70eb1012
             <div className="flex items-center justify-center h-full text-center text-white">
               <img
                 src={play}
@@ -120,6 +129,7 @@ const MovieDetails = ({
         </h2>
 
         <div className="flex justify-between text-center lg_pro:mx-4">
+<<<<<<< HEAD
           <p
             data-testid="movie-runtime"
             className="text-sm text-gray-600 mb-2 font-bold"
@@ -146,6 +156,20 @@ const MovieDetails = ({
         >
           <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span>{" "}
           {overview}
+=======
+          <p data-testid="movie-runtime" className="text-sm text-gray-600 mb-2 font-bold">
+            🕒Runtime: {runtime} minutes
+          </p>
+          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold">
+            <span className="text-gray-800 mb-2 font-extrabold">📅:</span> {utcReleaseDate}
+          </p>
+        </div>
+        <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">
+          ⭐Rating: {voteAverage}
+        </p>
+        <p data-testid="movie-overview" className="text-justify font-bold lg_pro:mx-4">
+          <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span> {overview}
+>>>>>>> f31651b37be9e26d4b191ca9513e5ccf70eb1012
         </p>
       </div>
     </div>
