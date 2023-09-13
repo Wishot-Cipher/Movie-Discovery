@@ -4,16 +4,8 @@ import logo1 from "../assets/logo2.png";
 import { Link } from "react-router-dom";
 
 const formatDateToUTC = (releaseDate) => {
-  const localDate = new Date(releaseDate);
-  const utcDate = new Date(
-    localDate.getUTCFullYear(),
-    localDate.getUTCMonth(),
-    localDate.getUTCDate(),
-    localDate.getUTCHours(),
-    localDate.getUTCMinutes(),
-    localDate.getUTCSeconds()
-  );
-  return utcDate.toISOString().split("T")[0];
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(releaseDate).toLocaleDateString('en-US', options);
 };
 
 const MovieDetails = ({
@@ -24,7 +16,7 @@ const MovieDetails = ({
   backdropPath,
   voteAverage,
 }) => {
-  let backgroundStyle = {
+  const backgroundStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://image.tmdb.org/t/p/original${backdropPath}')`,
     backgroundSize: "cover",
     backgroundPosition: "center top",
