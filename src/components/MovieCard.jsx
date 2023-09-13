@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, voteAverage, favorites }) => {
   // Convert releaseDate to UTC format
-  const releaseDateTime = new Date(releaseDate);
-  const formattedReleaseDate = `${releaseDateTime.getMonth() + 1}/${releaseDateTime.getDate()}/${releaseDateTime.getFullYear()}, ${releaseDateTime.getHours()}:${releaseDateTime.getMinutes()}`;
+  const formatDateToUTC = (releaseDate) => {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(releaseDate).toLocaleDateString('en-US', options);
+};
+  const utcReleaseDate = formatDateToUTC(releaseDate);
+
 
   return (
     <div className="text-black relative" data-testid="movie-card">
@@ -30,7 +34,7 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
             ⭐Rating: {voteAverage}
           </span>
           <span className="text-gray-600 font-md" data-testid="movie-release-date">
-            <span className="text-gray-600 mb-2 font-semibold">📅:</span> {formattedReleaseDate}
+            <span className="text-gray-600 mb-2 font-semibold">📅:</span> {utcReleaseDate}
           </span>
         </div>
       </div>
