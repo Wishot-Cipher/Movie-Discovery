@@ -34,7 +34,7 @@ const MovieDetailsPage = () => {
           releaseDate={movieDetails.release_date}
           runtime={movieDetails.runtime}
           overview={movieDetails.overview}
-          posterPath={movieDetails.poster_path}
+          backdropPath={movieDetails.backdrop_path}
           voteAverage={movieDetails.vote_average}
         />
       ) : (

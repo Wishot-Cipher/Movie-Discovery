@@ -122,13 +122,13 @@ const HomePage = () => {
       <div className="lg_pro:container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg">
         <div className="flex justify-between items-center mb-4 mx-4">
           <h1 className="text-2xl lg_pro:text-3xl font-extrabold">
-            Movie Discovery
+            Movie Discovery📡
           </h1>
           <Link
             to="/favorites"
-            className="bg-pink-700 text-white py-2 px-4 rounded-lg text-sm lg_pro:text-md hover:bg-pink-600"
+            className="bg-pink-700 text-white py-2 px-4 rounded-lg text-sm lg_pro:text-md hover:bg-pink-600 font-semibold"
           >
-            Favorites
+            Favorites🤍
           </Link>
         </div>
         <h2 className="text-1xl lg_pro:text-2xl font-extrabold mb-4 text-[#BE123C] border-b-1">

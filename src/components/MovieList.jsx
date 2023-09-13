@@ -34,6 +34,7 @@ const MovieList = ({ movies }) => {
          id={movie.id}
          voteAverage={movie.vote_average}
          favorites={favorites}
+        //  backdropPath={movie.backdrop_path}
          />
          </div>
       ))}

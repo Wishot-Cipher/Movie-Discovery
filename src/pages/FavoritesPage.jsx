@@ -41,7 +41,7 @@ const FavoritesPage = () => {
           </Link>
         </li>
       </ul>
-      <h1 className="text-3xl font-extrabold mb-4 mx-4">Favorite Movies</h1>
+      <h1 className="text-3xl font-extrabold mb-4 mx-4">Favorite Movies ❤️..</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {moviesDetails.map((movie, index) => (
           <div
@@ -60,10 +60,10 @@ const FavoritesPage = () => {
             </Link>
             <div className="flex justify-between items-center">
               <span className="text-gray-600 font-semibold">
-                Rating: {movie.vote_average}
+              ⭐Rating: {movie.vote_average}
               </span>
               <span className="text-gray-600 font-semibold">
-                Release Date: {new Date(movie.release_date).getFullYear()}
+              📅Year: {new Date(movie.release_date).getFullYear()}
               </span>
             </div>
           </div>

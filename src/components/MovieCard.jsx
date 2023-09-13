@@ -23,10 +23,10 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
         </Link>
         <div className="flex justify-between items-center">
           <span className="text-gray-600 font-semibold" data-testid="movie-vote-average">
-            Rating: {voteAverage}
+          ⭐Rating: {voteAverage}
           </span>
           <span className="text-gray-600 font-semibold" data-testid="movie-release-date">
-            Release Date: {releaseDate}
+          <span className="text-gray-600 mb-2 font-semibold">📅Date:</span> {releaseDate}
           </span>
         </div>
       </div>

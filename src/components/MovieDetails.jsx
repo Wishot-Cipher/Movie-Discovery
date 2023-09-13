@@ -8,16 +8,26 @@ const MovieDetails = ({
   releaseDate,
   runtime,
   overview,
-  posterPath,
+  backdropPath,
   voteAverage,
 }) => {
   const backgroundStyle = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://image.tmdb.org/t/p/w1280/${posterPath}')`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://image.tmdb.org/t/p/original${backdropPath}')`,
     backgroundSize: "cover",
-    backgroundPosition: "center center",
+    backgroundPosition: "center top",
     backgroundRepeat: "no-repeat",
-    height: "60vh",
+    height: "65vh",
+    maxHeight: "50vh"
   };
+
+  // Adjust background style for mobile
+  if (window.innerWidth <= 768) {
+    backgroundStyle = {
+      ...backgroundStyle,
+      height: "50vh",
+      maxHeight: "50vh",
+    };
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 p-2">
@@ -61,7 +71,7 @@ const MovieDetails = ({
       >
         <div
           data-testid="movie-poster"
-          className="relative"
+          className="relative rounded-lg"
           style={backgroundStyle}
         >
           {" "}
@@ -86,12 +96,13 @@ const MovieDetails = ({
 
         <div className="flex justify-between text-center lg_pro:mx-4">
           <p data-testid="movie-runtime" className="text-sm text-gray-600 mb-2 font-bold">
-            Runtime: {runtime} minutes
+          🕒Runtime: {runtime} minutes
           </p>
-          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold">{releaseDate}</p>
+          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold"><span className="text-gray-800 mb-2 font-extrabold">📅Date:</span> {releaseDate}</p>
         </div>
+        <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">⭐Rating: {voteAverage}</p>
         <p data-testid="movie-overview" className="text-justify font-bold lg_pro:mx-4">
-          {overview}
+       <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span> {overview}
         </p>
       </div>
     </div>
