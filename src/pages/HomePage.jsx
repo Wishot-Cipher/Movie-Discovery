@@ -11,6 +11,8 @@ import Spinner from "../components/Spinner";
 import SearchBar from "../components/SearchBar";
 import axios from "../utils/axios";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../App.css";
 import { Link } from "react-router-dom";
 
@@ -42,19 +44,50 @@ const HomePage = () => {
   // Function to handle search
   const handleSearch = async (query) => {
     try {
-      const response = await axios.get("/search/movie", {
-        params: {
-          query,
-          api_key: "14e6772572173a61fc985a3f2094ea07",
-        },
-      });
-      setMovies(response.data.results);
-      setLoading(false);
+      toast.promise(
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(
+              axios.get("/search/movie", {
+                params: {
+                  query,
+                  api_key: "14e6772572173a61fc985a3f2094ea07",
+                },
+              })
+            );
+          }, 1000); // Simulate a delay for demonstration purposes
+        }),
+        {
+          pending: "Searching for movie",
+          success: "Movie Found ✅💯",
+          error: "Error",
+        }
+      );
+  
+      // Simulate a delay before making the actual request
+      setTimeout(async () => {
+        try {
+          const response = await axios.get("/search/movie", {
+            params: {
+              query,
+              api_key: "14e6772572173a61fc985a3f2094ea07",
+            },
+          });
+  
+          setMovies(response.data.results);
+          setLoading(false);
+        } catch (error) {
+          console.error("Error fetching movies:", error);
+          setLoading(false);
+        }
+      }, 1000); // Add your desired delay time in milliseconds
     } catch (error) {
       console.error("Error fetching movies:", error);
       setLoading(false);
     }
   };
+  
+  
 
   return (
     <motion.div
@@ -118,6 +151,7 @@ const HomePage = () => {
             alt=""
           />
         </div>
+        <ToastContainer />
       </div>
       <div className="lg_pro:container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg">
         <div className="flex justify-between items-center mb-4 mx-4">

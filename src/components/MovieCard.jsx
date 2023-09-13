@@ -1,7 +1,16 @@
 import React from 'react';
+import { ToastContainer } from "react-toastify";
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, voteAverage, favorites }) => {
+  // Convert releaseDate to UTC format
+  const formatDateToUTC = (releaseDate) => {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(releaseDate).toLocaleDateString('en-US', options);
+};
+  const utcReleaseDate = formatDateToUTC(releaseDate);
+
+
   return (
     <div className="text-black relative" data-testid="movie-card">
       <div
@@ -21,19 +30,20 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
             {title}
           </h2>
         </Link>
+        <ToastContainer />
         <div className="flex justify-between items-center">
-          <span className="text-gray-600 font-semibold" data-testid="movie-vote-average">
-          ⭐Rating: {voteAverage}
+          <span className="text-gray-600 font-bold text-base" data-testid="movie-vote-average">
+            ⭐Rating: {voteAverage}
           </span>
-          <span className="text-gray-600 font-semibold" data-testid="movie-release-date">
-          <span className="text-gray-600 mb-2 font-semibold">📅Date:</span> {releaseDate}
+          <span className="text-gray-600 font-bold" data-testid="movie-release-date">
+            <span className="text-gray-600 mb-2 font-bold text-base">📅:</span> {utcReleaseDate}
           </span>
         </div>
       </div>
       <button
         className={`absolute top-6 text-2xl right-8 text-red-500 ${
           favorites.includes(id) ? "opacity-100" : "opacity-50"
-        } bg-white rounded-full p-[1px]`}
+        } bg-white rounded-full p-[2px]`}
         onClick={() => handleFavoriteToggle(id)}
       >
         ❤️

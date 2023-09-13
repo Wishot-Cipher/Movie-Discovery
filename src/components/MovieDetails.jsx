@@ -2,6 +2,27 @@ import React from "react";
 import play from "../assets/play.png";
 import logo1 from "../assets/logo2.png";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const formatDateToUTC = (releaseDate) => {
+  const options = { year: "numeric", month: "short", day: "numeric" };
+  return new Date(releaseDate).toLocaleDateString("en-US", options);
+};
+
+
+
+const notify = () => {
+  toast('🦄 Go And Read Your Books😂!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });;}
 
 const MovieDetails = ({
   title,
@@ -11,13 +32,13 @@ const MovieDetails = ({
   backdropPath,
   voteAverage,
 }) => {
-  const backgroundStyle = {
+  let backgroundStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://image.tmdb.org/t/p/original${backdropPath}')`,
     backgroundSize: "cover",
     backgroundPosition: "center top",
     backgroundRepeat: "no-repeat",
     height: "65vh",
-    maxHeight: "50vh"
+    maxHeight: "50vh",
   };
 
   // Adjust background style for mobile
@@ -28,6 +49,8 @@ const MovieDetails = ({
       maxHeight: "50vh",
     };
   }
+
+  const utcReleaseDate = formatDateToUTC(releaseDate);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 p-2">
@@ -74,9 +97,7 @@ const MovieDetails = ({
           className="relative rounded-lg"
           style={backgroundStyle}
         >
-          {" "}
-          {/* Added relative positioning */}
-          <Link to={"/"}>
+          <Link onClick={notify}>
             <div className="flex items-center justify-center h-full text-center text-white">
               <img
                 src={play}
@@ -89,20 +110,42 @@ const MovieDetails = ({
             </div>
           </Link>
         </div>
+        <ToastContainer />
 
-        <h2 data-testid="movie-title" className="text-3xl font-extrabold my-3 mb-6 text-center text-[#BE123C] text-shadow">
+        <h2
+          data-testid="movie-title"
+          className="text-3xl font-extrabold my-3 mb-6 text-center text-[#BE123C] text-shadow"
+        >
           {title}
         </h2>
 
         <div className="flex justify-between text-center lg_pro:mx-4">
-          <p data-testid="movie-runtime" className="text-sm text-gray-600 mb-2 font-bold">
-          🕒Runtime: {runtime} minutes
+          <p
+            data-testid="movie-runtime"
+            className="text-sm text-gray-600 mb-2 font-bold"
+          >
+            🕒Runtime: {runtime} minutes
           </p>
-          <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold"><span className="text-gray-800 mb-2 font-extrabold">📅Date:</span> {releaseDate}</p>
+          <p
+            data-testid="movie-release-date"
+            className="text-sm text-gray-600 mb-2 font-bold"
+          >
+            <span className="text-gray-800 mb-2 font-extrabold">📅:</span>{" "}
+            {utcReleaseDate}
+          </p>
         </div>
-        <p data-testid="movie-release-date" className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4">⭐Rating: {voteAverage}</p>
-        <p data-testid="movie-overview" className="text-justify font-bold lg_pro:mx-4">
-       <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span> {overview}
+        <p
+          data-testid="movie-release-date"
+          className="text-sm text-gray-600 mb-2 font-bold lg_pro:mx-4"
+        >
+          ⭐Rating: {voteAverage}
+        </p>
+        <p
+          data-testid="movie-overview"
+          className="text-justify font-bold lg_pro:mx-4"
+        >
+          <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span>{" "}
+          {overview}
         </p>
       </div>
     </div>
