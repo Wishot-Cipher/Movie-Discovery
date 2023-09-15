@@ -23,6 +23,9 @@
    .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
+   .text-shadow2 {
+    text-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.7);
+  }
   
   @keyframes spin {
     0% { transform: rotate(0deg); }

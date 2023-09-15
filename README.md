@@ -67,6 +67,7 @@ The application will be accessible at `http://localhost:3000` in your web browse
 - Framer Motion
 - Tailwind CSS
 - TMDB API
+- React Toastify
 
 ## Contributing
 

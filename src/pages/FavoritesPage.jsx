@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { Link } from "react-router-dom";
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
+
 const FavoritesPage = () => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 
@@ -17,7 +20,7 @@ const FavoritesPage = () => {
       const promises = favoriteMovies.map(async (movieId) => {
         const response = await axios.get(`/movie/${movieId}`, {
           params: {
-            api_key: "14e6772572173a61fc985a3f2094ea07", // Replace with your API key
+            api_key:apiKey, // Replace with your API key
           },
         });
         return response.data;

@@ -7,6 +7,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Footer from "./components/Footer";
 import FavoritesPage from "./pages/FavoritesPage";
 
+
+
 const App = () => {
   return (
     <ErrorBoundary>

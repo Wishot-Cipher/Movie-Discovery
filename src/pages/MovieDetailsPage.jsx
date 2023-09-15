@@ -4,6 +4,9 @@ import axios from '../utils/axios';
 import MovieDetails from '../components/MovieDetails';
 import Spinner from '../components/Spinner';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
+
 const MovieDetailsPage = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -14,7 +17,7 @@ const MovieDetailsPage = () => {
       try {
         const response = await axios.get(`/movie/${id}`, {
           params: {
-            api_key: '14e6772572173a61fc985a3f2094ea07',
+            api_key: apiKey,
           },
         });
         setMovieDetails(response.data);

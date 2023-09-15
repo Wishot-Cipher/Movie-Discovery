@@ -14,7 +14,7 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
   return (
     <div className="text-black relative" data-testid="movie-card">
       <div
-        className="bg-white p-4 shadow h-full flex flex-col justify-between rounded-lg"
+        className="bg-white p-4 shadow  flex flex-col justify-between rounded-lg h-full"
         style={{
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         }}
@@ -23,20 +23,20 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
           <img
             src={`https://image.tmdb.org/t/p/w500/${posterUrl}`}
             alt={`${title} Poster`}
-            className="w-full object-cover h-[90%] mb-1 object-center rounded-lg"
+            className="w-full object-cover h-[50vh] lg_pro:h-[58vh] mb-1 object-center rounded-lg"
             data-testid="movie-poster"
           />
-          <h2 className="text-xl font-bold mt-auto mb-4" data-testid="movie-title">
+          <h2 className="text-xl font-extrabold mt-auto mb-4  text-shadow2" data-testid="movie-title">
             {title}
           </h2>
         </Link>
         {/* <ToastContainer /> */}
         <div className="flex justify-between items-center">
-          <span className="text-gray-600 font-bold text-base" data-testid="movie-vote-average">
+          <span className="text-gray-600 font-bold text-sm" data-testid="movie-vote-average">
             ⭐Rating: {voteAverage}
           </span>
-          <span className="text-gray-600 font-bold" data-testid="movie-release-date">
-            <span className="text-gray-600 mb-2 font-bold text-base">📅:</span> {utcReleaseDate}
+          <span className="text-gray-600 font-bold text-sm" data-testid="movie-release-date">
+            📅: {utcReleaseDate}
           </span>
         </div>
       </div>

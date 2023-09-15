@@ -16,9 +16,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import "../App.css";
 import { Link } from "react-router-dom";
 
+
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  
+  // console.log(process.env)
+
 
   // Function to fetch top movies
   const fetchTopMovies = async () => {
@@ -26,7 +33,7 @@ const HomePage = () => {
       const response = await axios.get("/movie/top_rated", {
         params: {
           sort_by: "popularity.desc",
-          api_key: "14e6772572173a61fc985a3f2094ea07",
+          api_key:apiKey ,
         },
       });
       setMovies(response.data.results.slice(0, 10));
@@ -51,7 +58,7 @@ const HomePage = () => {
               axios.get("/search/movie", {
                 params: {
                   query,
-                  api_key: "14e6772572173a61fc985a3f2094ea07",
+                  api_key:apiKey,
                 },
               })
             );
