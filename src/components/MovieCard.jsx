@@ -23,7 +23,7 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
           <img
             src={`https://image.tmdb.org/t/p/w500/${posterUrl}`}
             alt={`${title} Poster`}
-            className="w-full object-cover h-[50vh] lg_pro:h-[58vh] mb-1 object-center rounded-lg"
+            className="w-full object-cover h-[54vh] lg_pro:h-[58vh] mb-1 object-center rounded-lg"
             data-testid="movie-poster"
           />
           <h2 className="text-xl font-extrabold mt-auto mb-4  text-shadow2" data-testid="movie-title">
@@ -41,9 +41,9 @@ const MovieCard = ({ title, releaseDate, posterUrl, handleFavoriteToggle, id, vo
         </div>
       </div>
       <button
-        className={`absolute top-6 text-2xl right-8 text-red-500 ${
-          favorites.includes(id) ? "opacity-100" : "opacity-50"
-        } bg-white rounded-full p-[2px]`}
+        className={`absolute top-6 text-2xl right-8 text-red-700 ${
+          favorites.includes(id) ? "opacity-100" : "opacity-60"
+        } bg-white rounded-full p-[3px]`}
         onClick={() => handleFavoriteToggle(id)}
       >
         ❤️

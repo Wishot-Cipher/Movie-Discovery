@@ -87,7 +87,7 @@ const HomePage = () => {
           console.error("Error fetching movies:", error);
           setLoading(false);
         }
-      }, 1000); // Add your desired delay time in milliseconds
+      }, 1000);
     } catch (error) {
       console.error("Error fetching movies:", error);
       setLoading(false);
@@ -160,7 +160,7 @@ const HomePage = () => {
         </div>
         <ToastContainer />
       </div>
-      <div className="lg_pro:container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg">
+      <div className="lg_pro:container mx-auto -mt-12 flex justify-center flex-col text-center mb-3 lg_pro:mt-1 shadow-lg ">
         <div className="flex justify-between items-center mb-4 mx-4">
           <h1 className="text-2xl lg_pro:text-3xl font-extrabold">
             Movie Discovery📡

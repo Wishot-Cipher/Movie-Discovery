@@ -48,7 +48,7 @@ const FavoritesPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {moviesDetails.map((movie, index) => (
           <div
-            className="bg-white p-4 shadow h-full flex flex-col justify-between rounded-lg"
+            className="bg-white p-4 shadow h-full flex flex-col justify-between rounded-lg "
             style={{
               boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
             }}
@@ -57,15 +57,15 @@ const FavoritesPage = () => {
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={`${movie.title} Poster`}
-                className="w-full object-cover h-[90%] mb-4 object-center rounded-lg"
+                className="w-full object-cover h-[54vh] lg_pro:h-[58vh]  mb-4 object-center rounded-lg"
               />
-              <h2 className="text-xl font-bold mt-auto mb-2">{movie.title}</h2>
+              <h2 className="text-xl font-bold mt-auto mb-2 text-shadow2">{movie.title}</h2>
             </Link>
             <div className="flex justify-between items-center">
-              <span className="text-gray-600 font-semibold">
+              <span className="text-gray-600 font-semibold text-sm">
               ⭐Rating: {movie.vote_average}
               </span>
-              <span className="text-gray-600 font-semibold">
+              <span className="text-gray-600 font-semibold text-xs">
               📅Year: {new Date(movie.release_date).getFullYear()}
               </span>
             </div>
